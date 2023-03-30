@@ -1,0 +1,8 @@
+<div *ngFor="let message of messages">
+  <p>
+    <a href="#">{{ message.user.pseudo }}</a> à écrit le
+    {{ message.date | date : "dd/MM/yyyy" | uppercase }} à
+    {{ message.date | date : "HH:mm" | uppercase }}
+  </p>
+  <p class="message">{{ message.message }}</p>
+</div>

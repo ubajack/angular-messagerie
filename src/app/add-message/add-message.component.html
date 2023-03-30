@@ -1,0 +1,18 @@
+<h2>Nouveau message :</h2>
+<div>
+  <form>
+    <label for="personne">De :</label>
+    <input type="text" id="personne" formControlName="personne" required />
+    <label for="message">Message : </label>
+    <textarea
+      id="message"
+      rows="3"
+      formControlName="message"
+      required
+    ></textarea>
+    <div class="grid-button">
+      <button type="button" class="five">Valider</button>
+      <button class="six" type="reset">Annuler</button>
+    </div>
+  </form>
+</div>
