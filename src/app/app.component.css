@@ -1,34 +1,20 @@
-.container {
-    border: 2px solid red;
-    display: flex;
-    flex-wrap: wrap;
-    min-height: inherit;
-}
-
-.users {
-    border: 1px solid purple;
-    flex-grow: 0.4;
-}
-
-.messages {
-    flex-grow: 0.6;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
 .box {
     margin: 40px auto;
-    max-width: 1200px;
-    min-height: 800px;
+    width: 1200px;
+    height: 800px;
 }
 
-.message-list {
-    border: 1px solid brown;
-    flex-grow: 0.7;
+.container {
+    border: 2px solid red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.message-form {
-    border: 1px solid blue;
-    flex-grow: 0.3;
+.header {
+    flex-grow: 0.05;
+}
+
+.component {
+    flex-grow: 0.95;
 }

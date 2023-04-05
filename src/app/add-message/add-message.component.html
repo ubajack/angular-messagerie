@@ -1,44 +1,30 @@
-<h2>Nouveau message :</h2>
 <div>
-  <!-- Module06 - TP2 - Compléter pour gérer le formulaire -- formGroup -->
-  <form [formGroup]="messageForm">
-    <label for="user">De :</label>
-    <input type="text" id="user" formControlName="user" required />
-    <div
-      *ngIf="
+  <h2>Nouveau message :</h2>
+  <div>
+    <!-- Module06 - TP2 - Compléter pour gérer le formulaire -- formGroup -->
+    <form [formGroup]="messageForm">
+      <label for="user">De :</label>
+      <input type="text" id="user" formControlName="user" required />
+      <div *ngIf="
         messageForm.controls['user'].invalid &&
         (messageForm.touched || messageForm.dirty)
-      "
-      class="alert"
-    >
-      Le pseudo est obligatoire
-    </div>
-    <label for="message">Message : </label>
-    <textarea
-      id="message"
-      rows="3"
-      formControlName="message"
-      required
-    ></textarea>
-    <div
-      *ngIf="
+      " class="alert">
+        Le pseudo est obligatoire
+      </div>
+      <label for="message">Message : </label>
+      <textarea id="message" rows="3" formControlName="message" required></textarea>
+      <div *ngIf="
         messageForm.controls['user'].invalid &&
         (messageForm.touched || messageForm.dirty)
-      "
-      class="alert"
-    >
-      Le message est obligatoire
-    </div>
-    <div class="grid-button">
-      <button
-        type="button"
-        class="five"
-        (click)="onSubmit()"
-        [disabled]="!messageForm.valid"
-      >
-        Valider
-      </button>
-      <button type="reset">Annuler</button>
-    </div>
-  </form>
+      " class="alert">
+        Le message est obligatoire
+      </div>
+      <div class="grid-button">
+        <button type="button" class="five" (click)="onSubmit()" [disabled]="!messageForm.valid">
+          Valider
+        </button>
+        <button type="reset">Annuler</button>
+      </div>
+    </form>
+  </div>
 </div>

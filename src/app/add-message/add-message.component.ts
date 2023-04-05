@@ -10,6 +10,7 @@ import { MessagesService } from '../services/messages.service';
 })
 export class AddMessageComponent {
   messageForm: FormGroup;
+  @Output() onAddMessage: EventEmitter<Message> = new EventEmitter();
 
   constructor(private messageService: MessagesService) {
     this.messageForm = new FormGroup({
@@ -21,13 +22,17 @@ export class AddMessageComponent {
   onSubmit() {
     console.warn(this.messageForm.value);
 
-    this.messageService
-      .addMessage(
-        new Message(
+    const newMessage: Message = new Message(
           new User(this.messageForm.value.user),
           this.messageForm.value.message
-        )
+        );
+
+    this.messageForm.reset('');
+
+    this.messageService
+      .addMessage(
+        newMessage
       )
-      .subscribe((message) => console.log('message', message));
+      .subscribe((message) => this.onAddMessage.emit(message));
   }
 }

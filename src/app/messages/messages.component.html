@@ -1,8 +1,16 @@
-<div *ngFor="let message of messages">
-  <p>
-    <a href="#">{{ message.user.pseudo }}</a> à écrit le
-    {{ message.date | date : "dd/MM/yyyy" | uppercase }} à
-    {{ message.date | date : "HH:mm" | uppercase }}
-  </p>
-  <p class="message">{{ message.message }}</p>
+<div class="app">
+  <div class="users">
+    <h2>Personnes actives :</h2>
+    <app-users *ngFor="let user of users" [user]="user"></app-users>
+  </div>
+  <div class="messages">
+    <div class="message-list">
+      <h2>Messages :</h2>
+      <app-message-item *ngFor="let message of messages" [message]="message">
+      </app-message-item>
+    </div>
+    <div class="message-form">
+      <app-add-message (onAddMessage)="addMessage($event)"></app-add-message>
+    </div>
+  </div>
 </div>

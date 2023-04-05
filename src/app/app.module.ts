@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageItemComponent } from './message-item/message-item.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     MessagesComponent,
     UsersComponent,
     AddMessageComponent,
+    MessageItemComponent,
   ],
   imports: [
     BrowserModule,
