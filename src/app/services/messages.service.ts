@@ -13,11 +13,12 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class MessagesService {
-  private apiUrl = 'https://message-server.cleverapps.io/messages';
+  private apiUrl = 'http://localhost:3030/messages';
 
   constructor(private http: HttpClient) {}
 
   getMessages(): Observable<Message[]> {
+    console.log('getting messages');
     return this.http.get<Message[]>(this.apiUrl);
   }
 

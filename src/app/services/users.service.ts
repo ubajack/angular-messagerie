@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UsersService {
-  apiUrl = 'https://message-server.cleverapps.io/users';
+  apiUrl = 'http://localhost:3030/users';
 
   constructor(private http: HttpClient) {}
 
