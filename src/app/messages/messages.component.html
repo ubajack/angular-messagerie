@@ -1,13 +1,17 @@
 <div class="app">
-  <div class="users">
+  <div class="users-list">
     <h2>Personnes actives :</h2>
-    <app-users *ngFor="let user of users" [user]="user"></app-users>
+    <div class="users-item">
+      <app-users *ngFor="let user of users" [user]="user"></app-users>
+    </div>
   </div>
   <div class="messages">
     <div class="message-list">
       <h2>Messages :</h2>
-      <app-message-item *ngFor="let message of messages" [message]="message">
-      </app-message-item>
+      <div class="message-items">
+        <app-message-item *ngFor="let message of messages" [message]="message">
+        </app-message-item>
+      </div>
     </div>
     <div class="message-form">
       <app-add-message (onAddMessage)="addMessage($event)"></app-add-message>

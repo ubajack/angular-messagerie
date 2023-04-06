@@ -1,26 +1,27 @@
 <div>
   <h2>Nouveau message :</h2>
   <div>
-    <!-- Module06 - TP2 - Compléter pour gérer le formulaire -- formGroup -->
     <form [formGroup]="messageForm">
-      <label for="user">De :</label>
+      <label for="user">Pseudo :</label>
       <input type="text" id="user" formControlName="user" required />
-      <div *ngIf="
+      <!-- <div *ngIf="
         messageForm.controls['user'].invalid &&
         (messageForm.touched || messageForm.dirty)
       " class="alert">
         Le pseudo est obligatoire
-      </div>
+      </div> -->
       <label for="message">Message : </label>
-      <textarea id="message" rows="3" formControlName="message" required></textarea>
-      <div *ngIf="
+      <textarea name="message" id="message" formControlName="message" cols="50" rows="6"
+        placeholder="Type your message here" required></textarea>
+      <!-- <div *ngIf="
         messageForm.controls['user'].invalid &&
         (messageForm.touched || messageForm.dirty)
       " class="alert">
         Le message est obligatoire
-      </div>
-      <div class="grid-button">
-        <button type="button" class="five" (click)="onSubmit()" [disabled]="!messageForm.valid">
+      </div> -->
+      <div class="buttons">
+        <p>[Error will be placed here]</p>
+        <button type="button" (click)="onSubmit()" [disabled]="!messageForm.valid">
           Valider
         </button>
         <button type="reset">Annuler</button>
